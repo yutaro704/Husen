@@ -19,10 +19,11 @@
   <header>
     <nav>
         <div class="nav-wrapper green darken-2">
-          <a href="#" class="brand-logo">Husen</a>
+          <a href="/" class="brand-logo">Husen</a>
           <% if user_signed_in? %>
           <ul id="nav-mobile" class="right">
-            <li><a href="sticky/new" class="waves-effect waves-light btn"><i class="material-icons left">create</i>ふせん作成</a></li>
+            <li><a href="users/sticky/new" class="waves-effect waves-light btn"><i class="material-icons left">create</i>ふせん作成</a></li>
+            <li><a href="users/<%= current_user.id %>" class="waves-effect waves-light btn"><i class="material-icons left">face</i>マイページ</a></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </ul>
           <% else %>
