@@ -1,4 +1,5 @@
 <div class="contents row" >
     <% @stickies.each do |sticky| %>
+    <%= render partial: "sticky/sticky", locals: { sticky: sticky} %>
     <% end %>
 </div>
