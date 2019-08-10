@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## stickiesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|text||
+|test|text||
+
+### Association
+- belongs_to :user
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|strings|null: false|
+
+### Association
+- has_many :stickies
