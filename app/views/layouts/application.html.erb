@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tipchip</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+  </head>
+  <header>
+    <nav>
+        <div class="nav-wrapper green darken-2">
+          <a href="#" class="brand-logo">Husen</a>
+          <% if user_signed_in? %>
+          <ul id="nav-mobile" class="right">
+            <li><a href="sticky/new" class="waves-effect waves-light btn"><i class="material-icons left">create</i>ふせん作成</a></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          </ul>
+          <% else %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down ">
+            <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+            <li><%= link_to "新規登録", new_user_session_path, class: 'get' %></li>
+          </ul>
+          <% end %>
+        </div> %>
+    </nav>
+  </header>
+    <body>
+      <%= yield %>
+      <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>
